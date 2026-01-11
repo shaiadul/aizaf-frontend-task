@@ -1,13 +1,9 @@
-// app/about/page.tsx
 "use client";
-
 import { motion } from "framer-motion";
 
 export default function AboutPage() {
   return (
     <main className="bg-gradient-to-b from-gray-50 to-gray-100 text-gray-900 min-h-screen px-6 py-12">
-      
-      {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -18,12 +14,11 @@ export default function AboutPage() {
           Welcome to Our Company
         </h1>
         <p className="text-gray-700 text-lg md:text-xl">
-          We create amazing products that make life easier and more enjoyable.  
+          We create amazing products that make life easier and more enjoyable.
           Innovation, reliability, and care guide everything we do.
         </p>
       </motion.section>
 
-      {/* Interactive Stats Section */}
       <motion.section
         initial="hidden"
         whileInView="visible"
@@ -44,13 +39,14 @@ export default function AboutPage() {
             transition={{ duration: 0.6, delay: idx * 0.2 }}
             className="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center justify-center hover:scale-105 transition-transform"
           >
-            <span className="text-4xl font-bold text-black mb-2">{stat.value}</span>
+            <span className="text-4xl font-bold text-black mb-2">
+              {stat.value}
+            </span>
             <span className="text-gray-700 font-medium">{stat.label}</span>
           </motion.div>
         ))}
       </motion.section>
 
-      {/* Timeline Section */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -60,14 +56,14 @@ export default function AboutPage() {
         <h2 className="text-3xl font-bold mb-8 text-center">Our Journey</h2>
         <div className="relative border-l-2 border-indigo-200 pl-6">
           {[
-            { year: "2005", desc: "Started our company as a small team of engineers." },
-            { year: "2010", desc: "Started our company as a small team of engineers." },
-            { year: "2015", desc: "Started our company as a small team of engineers." },
-            { year: "2018", desc: "Started our company as a small team of engineers." },
-            { year: "2021", desc: "Company founded with a vision to simplify daily life." },
-            { year: "2022", desc: "Launched our first set of innovative products." },
-            { year: "2023", desc: "Reached 5,000 happy customers worldwide." },
-            { year: "2024", desc: "Expanded globally and improved product line." },
+            { year: "2005", desc: "Started as a small team of engineers." },
+            { year: "2010", desc: "Expanded team and launched new products." },
+            { year: "2015", desc: "Opened first international office." },
+            { year: "2018", desc: "Reached 1,000 customers worldwide." },
+            { year: "2021", desc: "Launched innovative tech solutions." },
+            { year: "2022", desc: "Introduced premium services globally." },
+            { year: "2023", desc: "Achieved 5,000 happy customers." },
+            { year: "2024", desc: "Expanded product line internationally." },
           ].map((item, idx) => (
             <motion.div
               key={idx}
@@ -85,7 +81,6 @@ export default function AboutPage() {
         </div>
       </motion.section>
 
-      {/* Animated Values Section */}
       <motion.section
         initial="hidden"
         whileInView="visible"
@@ -115,7 +110,6 @@ export default function AboutPage() {
         </div>
       </motion.section>
 
-      {/* Call To Action */}
       <motion.section
         initial={{ scale: 0.95, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
@@ -124,7 +118,9 @@ export default function AboutPage() {
         className="bg-black text-white py-16 text-center rounded-xl shadow-lg max-w-4xl mx-auto"
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Join Us Today</h2>
-        <p className="mb-6">Discover more about our products and services. Let’s grow together!</p>
+        <p className="mb-6">
+          Discover more about our products and services. Let’s grow together!
+        </p>
         <a
           href="/contact"
           className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
@@ -132,7 +128,6 @@ export default function AboutPage() {
           Contact Us
         </a>
       </motion.section>
-
     </main>
   );
 }

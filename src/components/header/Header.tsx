@@ -1,14 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const searchParams = useSearchParams();
-  const activeCategory = searchParams.get("category");
+  const [activeCategory, setActiveCategory] = useState("/");
 
   const menuData = [
     {
@@ -53,6 +51,7 @@ export default function Header() {
                 <Link
                   key={idx}
                   href={`${cat.link}`}
+                  onClick={() => setActiveCategory(cat.link)}
                   className={`relative text-sm font-medium transition-colors
                     ${
                       isActive ? "text-black" : "text-gray-600 hover:text-black"
@@ -96,7 +95,10 @@ export default function Header() {
                   <Link
                     key={idx}
                     href={`${cat.link}`}
-                    onClick={() => setOpen(false)}
+                    onClick={() => {
+                      setOpen(false);
+                      setActiveCategory(cat.link);
+                    }}
                     className="block text-sm font-medium text-gray-700 hover:text-black"
                   >
                     {cat.name}

@@ -35,7 +35,7 @@ export default function BannerCarousel({ banners }: { banners: Banner[] }) {
               >
                 
                 <Image
-                  src={banner?.image}
+                  src={banner?.image ? banner?.image : "/images/placeholder.png"}
                   alt="Banner"
                   width={1920}
                   height={1080}
