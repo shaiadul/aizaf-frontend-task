@@ -18,8 +18,16 @@ export interface Category {
 
 export interface Banner {
   id: number;
-  image: string;
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  image?: string;
+  link?: string;
+  buttonText?: string;
+  order?: number;
+  active?: boolean;
 }
+
 
 
 export interface SearchParams {
